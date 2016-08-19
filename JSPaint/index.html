@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>JSPaint</title>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet" type="text/css">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+<body onload="createPalette()">
+    <div id="topBar">
+        <span id="title">JSPaint</span>
+        <div id="sizeContainer">
+            <span class="button" id="inputSubmit" onclick="changeLineSize()">Line Size!</span>
+            <span id="input" contenteditable="true">5</span>
+        </div>
+        <div class="button" id="backgroundColorButton" onclick="changeBackgroundColor()">Background Color!</div>
+        <div id="save" class="button" onclick="saveToImg()">Save!</div>
+        <div id="paletteButton" onclick="showPalette(this, 'show')">
+            <img id="arrow" src="img/arrow.png" class="button">
+        </div>
+    </div>
+    <div id="palette">
+        Color Palette
+        <div id="colors"></div>
+        <div id="upContainer" class="button" onclick="showPalette(null, 'hide')">
+            <img class="button" id="arrowUp" src="img/arrow.png">
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+</body>
+<script src="js/canvas2image.js"></script>
+<script src="js/colors.js"></script>
+<script src="js/paint.js"></script>
+
+</html>

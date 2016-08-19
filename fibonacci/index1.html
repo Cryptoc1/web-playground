@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        body {
+            font-family: Monospace;
+            background-color: #a8ddf8;
+            margin: 0px;
+            overflow: hidden;
+        }
+        #header {
+            height: 60%;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <div id="header"></div>
+    <script src="Three.js"></script>
+    <script src="TrackballControls.js"></script>
+
+    <script>
+        var controls, scene, camera, box, spline, counter = 1;
+        var header = document.getElementById('header');
+
+        function init() {
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            header.appendChild(renderer.domElement);
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+            camera.position.set(0, 0, 4000);
+            camera.lookAt(new THREE.Vector3(0, 1, 0));
+            scene = new THREE.Scene();
+            controls = new THREE.TrackballControls(camera, render.domElement);
+
+            var numPoints = 150;
+            var vectors = [new THREE.Vector3(0, 0, 0)];
+
+            for (i = 0; i < 200; i++) {
+                angle = 0.1 * i;
+                x = 0 + (0 + 75 * angle) * Math.cos(angle);
+                y = 0 + (0 + 75 * angle) * Math.sin(angle);
+                var vector = new THREE.Vector3(x, y, 0);
+                vectors.push(vector)
+            }
+
+            spline = new THREE.SplineCurve3(vectors);
+
+            var material = new THREE.LineBasicMaterial({
+                color: 0xff00f0,
+            });
+
+            var geometry = new THREE.Geometry();
+            var splinePoints = spline.getPoints(numPoints);
+
+            for (var i = 0; i < splinePoints.length; i++) {
+                geometry.vertices.push(splinePoints[i]);
+            }
+
+            var line = new THREE.Line(geometry, material);
+            scene.add(line);
+
+            geometry = new THREE.CubeGeometry(20, 20, 20);
+            material = new THREE.MeshBasicMaterial({
+                color: 0xff0000
+            });
+
+            box = new THREE.Mesh(geometry, material);
+            scene.add(box);
+
+            var map = THREE.ImageUtils.loadTexture("img/particle.png");
+            var material = new THREE.SpriteMaterial({
+                map: map,
+                color: 0xffffff
+            });
+            var sprite = new THREE.Sprite(material);
+            scene.add(sprite);
+
+
+            animate();
+
+            setInterval(moveBox, 100);
+        }
+
+        function moveBox() {
+            box.position = spline.getPoint(counter);
+            counter -= 0.005;
+            if (counter <= 0) {
+                counter = 1;
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            controls.update();
+            renderer.render(scene, camera);
+        }
+    </script>
+
+</body>
+
+</html>

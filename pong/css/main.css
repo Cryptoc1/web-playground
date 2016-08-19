@@ -1,0 +1,28 @@
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+canvas {
+    background-color: #B0BEC5;
+    opacity: 0.8;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#leftScore {
+    z-index: 1000;
+    color: #212121;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 50px;
+}
+#rightScore {
+    z-index: 1000;
+    color: #212121;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 50px;
+}

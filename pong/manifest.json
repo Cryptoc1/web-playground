@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Pong",
+    "author": "Cryptocosm Developers",
+    "description": "A flat version of the classic game.",
+    "version": "1.0.0",
+    "app": {
+        "background": {
+            "scripts": ["js/background.js"]
+        }
+    },
+    "permissions": [
+                "webview",
+                "contextMenus"
+    ],
+    "icons": {
+        "16": "img/icon.png",
+        "52": "img/icon.png"
+    },
+    "sandbox": {
+        "pages": ["index.html"]
+    }
+}

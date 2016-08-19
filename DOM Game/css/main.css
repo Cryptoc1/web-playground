@@ -1,0 +1,35 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #ffffff;
+    margin: 0;
+    overflow: hidden;
+    font-family: arial;
+}
+#content {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#instructions {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #eeeeee;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.level {
+    height: 40px;
+    padding: 10px;
+    cursor: pointer;
+}
+.level:hover {
+    background-color: #212121;
+    color: #ffffff;
+    opacity: 0.5;
+}
+.level:click {
+    display: none;
+}

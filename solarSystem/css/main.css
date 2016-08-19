@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Roboto-Thin;
+    font-style: normal;
+    src: url(Roboto/Roboto-Thin.ttf);
+}
+html {
+    background-color: #212121;
+}
+body {
+    color: white;
+    font-family: Roboto-Thin;
+}
+p {
+    text-indent: 15px;
+}
+#counter {
+    background-color: rgba(0, 0, 0, .4);
+    width: auto;
+    height: auto;
+    font-size: 34px;
+    float: left;
+    position: fixed;
+    padding: 10px;
+}
+#menu {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    right: 0px;
+    width: 500px;
+    z-index: 100;
+}
+#menu p {
+    font-size: 18px;
+}

@@ -1,0 +1,139 @@
+ html,
+ body {
+     font-family: Lato, sans-serif;
+     font-weight: 300;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     background-color: #F5F5F5;
+ }
+ canvas {
+     position: absolute;
+     left: 0;
+     top: 0;
+     z-index: 0;
+     cursor: crosshair;
+ }
+ #topbar {
+     background-color: #283593;
+     opacity: 0.85;
+     width: 100%;
+     height: 25px;
+     position: fixed;
+     top: 0;
+     left: 0;
+     padding: 20px;
+     color: #EEEEEE;
+     font-size: 30px;
+     text-align: center;
+     z-index: 1;
+ }
+ #title {
+     position: inherit;
+     left: 25;
+     top: 13;
+     font-weight: 400;
+ }
+ #sizeContainer {
+     position: inherit;
+     right: 965;
+     top: 13;
+     height: 40px;
+     width: auto;
+ }
+ #inputSubmit {
+     background-color: #F44336;
+     font-size: 24px;
+     padding: 8px;
+     text-align: center;
+     z-index: inherit;
+ }
+ #input {
+     color: #eeeeee;
+     background-color: #78909C;
+     text-align: center;
+     border: none;
+     padding: 10px;
+     padding-left: 15px;
+     padding-right: 15px;
+     font-size: 26px;
+     width: 600px;
+     height: 15px;
+ }
+ #input:active {
+     border: none;
+ }
+ #backgroundColorButton {
+     width: 200px;
+     background-color: #F44336;
+     font-size: 24px;
+     padding: 8px;
+     text-align: center;
+     position: inherit;
+     right: 715;
+     top: 10;
+ }
+ #save {
+     width: 100px;
+     background-color: #F44336;
+     font-size: 24px;
+     padding: 8px;
+     text-align: center;
+     position: inherit;
+     right: 565;
+     top: 10;
+ }
+ #paletteButton {
+     position: absolute;
+     right: 40;
+     top: 0;
+     width: 500px;
+     height: 35px;
+     padding: 15px;
+     color: #EEEEEE;
+     text-align: center;
+     cursor: pointer;
+     background-color: #F44336;
+ }
+ #palette {
+     position: absolute;
+     right: 0;
+     top: -720;
+     width: 500px;
+     padding: 15px;
+     color: #EEEEEE;
+     font-size: 24px;
+     z-index: 1;
+     text-align: center;
+     background-color: #283593;
+     opacity: 0.9;
+ }
+ #colors {
+     margin-top: 10px;
+     height: 600px;
+     overflow-y: scroll;
+     background-color: #E0E0E0;
+     opacity: 0.9;
+ }
+ .color {
+     width: 145px;
+     height: 100px;
+     margin: 8px;
+     display: inline-block;
+     cursor: pointer;
+ }
+ .button {
+     cursor: pointer;
+ }
+ #arrowUp {
+     margin-top: 15px;
+     margin-right: 170px;
+     transition: 1.3s;
+ }
+ #upContainer {
+     background-color: #F44336;
+     width: 700px;
+     height: 65px;
+     margin-left: -15px;
+     margin-bottom: -15px;
+ }

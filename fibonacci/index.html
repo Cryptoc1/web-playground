@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>Fibonacci's Numbers</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--    <div id="x"></div>
+    <br>
+    <br>
+    <div id="y"></div> -->
+
+    <canvas id="canvas"></canvas>
+    <script>
+        var fibonacci = [1, 1];
+        var x = document.getElementById('x');
+        for (i = 0; i < fibonacci.length; i++) {
+            if (fibonacci.length < 15) {
+                var n = fibonacci[i] + fibonacci[i + 1];
+                fibonacci.push(n);
+            }
+        }
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d');
+        var width = window.innerWidth,
+            height = window.innerHeight;
+
+        canvas.width = width;
+        canvas.height = height;
+
+        setInterval(draw, 30);
+
+        var framecount = 0;
+        var nbr_circles = 150;
+
+        var angle_incr = (2 + (0) / 12.0) * Math.PI / 180;
+
+        var cx = width / 2;
+        var cy = height / 2;
+        var outer_rad = width * .45;
+        var ratio;
+        var angle;
+        var spiral_rad;
+        var x;
+        var y;
+
+        var sm_rad = 3;
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+
+            ctx.fillStyle = '#000';
+
+            angle_incr = (2 + (framecount) / 12.0) * Math.PI / 180;
+
+            for (i = 1; i <= nbr_circles; ++i) {
+                ratio = i / nbr_circles;
+                angle = i + 2 * angle_incr;
+                spiral_rad = ratio * outer_rad;
+                x = cx + (Math.sin(angle) * -angle) * 4;
+                y = cy + (Math.cos(angle) * -angle) * 4;
+
+                // draw tiny circle at x,y
+                ctx.beginPath();
+                ctx.arc(x, y, sm_rad, 0, 2 * Math.PI, false);
+                ctx.fill();
+                //                if angle
+
+            }
+            framecount++;
+        };
+
+        function makeCircle(config) {
+            ctx.fillStyle = config.color;
+            ctx.beginPath();
+            ctx.arc(config.x, config.y, config.radius, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fill();
+        };
+    </script>
+</body>
+
+</html>
