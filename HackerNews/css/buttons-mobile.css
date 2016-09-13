@@ -1,0 +1,129 @@
+/*
+ This CSS file styles the buttons and forms
+*/
+
+#buttons {
+    position: fixed;
+    right: 10;
+    bottom: 10;
+    transition: top 1.3s;
+    z-index: 6;
+}
+.button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: #FFEA00;
+    cursor: pointer;
+    margin: 5px;
+    display: inline-block;
+    position: relative;
+}
+.button img {
+    position: relative;
+    top: 26;
+    left: 26;
+    opacity: 0.80;
+}
+#more {
+    transition: 1.125s;
+    z-index: 10;
+    box-shadow: 0px 2px 8px #BDBDBD;
+}
+#info {
+    transition: 0.9s;
+    position: relative;
+    left: 115;
+}
+#newSource {
+    transition: 1s;
+    position: relative;
+    left: 225;
+}
+#reload {
+    transition: 1.1s;
+    position: relative;
+    left: 346;
+}
+#overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(61, 61, 61, 0.75);
+    z-index: 10;
+}
+#infoMenu {
+    position: fixed;
+    color: #212121;
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 550px;
+    height: 400px;
+    padding: 15px;
+    z-index: 11;
+    display: none;
+}
+#infoMenuTitle {
+    font-size: 22px;
+    margin-left: 10px;
+}
+#infoContainer {
+    overflow-y: scroll;
+    width: 500px;
+    height: 275px;
+    padding: 15px;
+    margin: 10 auto;
+    background-color: #F5F5F5;
+    text-align: justify;
+}
+#newSourceMenu {
+    position: fixed;
+    color: #212121;
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 550px;
+    height: 400px;
+    padding: 15px;
+    z-index: 11;
+    display: none;
+}
+#newSourceMenuTitle {
+    font-size: 22px;
+    margin-left: 10px;
+}
+.input {
+    border: none;
+    padding: 5px;
+    background-color: #E0E0E0;
+}
+.input:active {
+    border: none;
+}
+.MenuTitle {
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.submit {
+    cursor: pointer;
+    position: relative;
+    top: 65;
+    left: 430;
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    background-color: #FFEA00;
+}
+#redditSource {
+    margin-left: 10px;
+}
+#closeBtnWrapper {
+    position: relative;
+    top: 10;
+    left: 515;
+    cursor: pointer;
+    z-index: 11;
+}

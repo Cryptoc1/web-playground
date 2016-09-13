@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <title>Hacker.news( )</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/articles.css" rel="stylesheet" type="text/css">
+    <link href="css/buttons.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div id="header">
+        <div style="width: 100%; height: 15px; background-color: #0288D1;"></div>
+        <div class="container">
+            <div id="title">
+                Hacker.news( );
+            </div>
+        </div>
+        <div id="buttons">
+            <div class="button" id="reload" onclick="reload()" title="Refresh Feed">
+                <img src="img/sinchronize-24.png">
+            </div>
+            <div class="button" id="newSource" onclick="showMenu(this)" menu="newSourceMenu" title="New Source">
+                <img src="img/plus-24.png">
+            </div>
+            <div class="button" id="info" onclick="showMenu(this)" menu="info" title="Info">
+                <img src="img/info-24.png">
+            </div>
+            <div class="button" id="more" onclick="more()" title="Options">
+                <img src="img/more-24.png">
+            </div>
+        </div>
+        <div id="overlay" style="display: none;">
+            <div id="infoMenu">
+                <div id="closeBtnWrapper" onclick="closeMenu(this)">
+                    <img id="closeButton" src="img/cancel-25.png">
+                </div>
+                <br>
+                <span id="infoMenuTitle">About Hacker.news( )</span>
+                <br>
+                <div id="infoContainer">
+                    <span style="font-weight: 400">Site Features / Current Limitations:</span>
+                    <p>The default sources in the feed are <em>/r/programming</em> and <em>/r/hacking</em>. Users can add their own sources, but they are currently only limited to sub-reddits. Additionally, users can't yet remove sources from their feed without clearing the site localStorage (If you have Google Chrome, this is easy). Features we're hoping to come is the ability to add sources from sites like 4Chan, YoutTube and Twitter. If you have a site that you feel would fit well with this site, you can submit a suggestion <a href="mailto:support@cryptocosm.x10.bz?Subject=Hacker%20News%20Feature%20request" target="_top">here</a>.</p>
+                    <span style="font-weight: 400">About the Developers:</span>
+                    <p>This project was designed and coded by Samuel Steele, a member of <a href="http://cryptocosm.x10.bz" target="_blank">Cryptocosm Developers</a>. I (Sam) created this site because I wanted to play around with some APIs, particularly Reddit's. The site's design was greatly inspired Material Design, if it wasn't yet adherent.</p>
+                    <span style="font-weight: 400">Additional Credits:</span>
+                    <p>-&nbsp;&nbsp;Icons used in this site were provided by <a href="htpp://icons8.com/app" target="_blank">Icons8</a>.</p>
+                    <p>-&nbsp;&nbsp;Thanks to <a href="http://www.sahilm.com" target="_blank">Sahil Muthoo</a> for his browser wrapper to the Reddit API.</p>
+                    <p>-&nbsp;&nbsp;UI inspired by <a href="http://www.google.com/design/spec/material-design/introduction.html" target="_blank">Google's Material Design Guidlines</a>
+                    </p>
+                    <div id="copy" style="font-size: 15px; text-align: center;"></div>
+                    <script>
+                        var year = new Date().getFullYear();
+                        if (year > 2014)
+                            var copy = "2014-" + year.toString();
+                        else
+                            var copy = "2014";
+                        document.getElementById('copy').innerHTML = "&copy;" + copy + " Cryptocosm Developers";
+                    </script>
+                </div>
+            </div>
+            <div id="newSourceMenu">
+                <div id="closeBtnWrapper" onclick="closeMenu(this)">
+                    <img id="closeButton" src="img/cancel-25.png">
+                </div>
+                <br>
+                <span id="newSourceMenuTitle">Add a New Source to Your Feed</span>
+                <br>
+                <br>
+                <div class="MenuTitle">Reddit Source</div>
+                <div id="redditSource">/r/&nbsp;<span class="input" contenteditable="true" placeholder="Source" onclick="this.innerHTML = '';">Source</span>
+                </div>
+                <br>
+                <br>
+                <br>
+                <p><em>More Source Options coming Soon...</em>
+                </p>
+                <div class="submit" onclick="newSource(this);">Add Source</div>
+            </div>
+        </div>
+    </div>
+    <div id="bodContainer"></div>
+</body>
+
+<script src="js/cookie.js"></script>
+<script src="js/reddit.min.js"></script>
+<script src="js/content.js"></script>
+<script src="js/buttons.js"></script>
+<script src="js/style.js"></script>
+
+</html>
