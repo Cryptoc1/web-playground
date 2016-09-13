@@ -6,3 +6,6 @@ The type of projects include:
 * THREE.js
 * canvas/two.js
 * getUserMedia
+
+
+You can view a live version of an project by visiting: `https://cryptoc1.github.io/web-playground/<project>/index.html`
